@@ -1,0 +1,35 @@
+﻿@using IT_Shop.Models
+@model List<IT_Shop.Models.Product>
+@{
+    ViewBag.Title = "ViewProducts";
+}
+
+<style>
+    .products {
+        float: right;
+        width: 300px;
+        text-align: left;
+    }
+</style>
+
+@Html.Action("ViewCategoryManufacturers", "Category")
+
+<div class="products">
+
+    @foreach (var i in Model)
+    {
+        <p>@Html.RouteLink(i.Name, "Products", new { CategoryName = i.Category.Parent.Name, SubcategoryName = i.Category.Name.Replace(" ", "_"), ProductName = i.Name.Replace(" ", "_"), action = "ViewProductDetails" })</p>
+        @*<a href="@Url.Action("ViewProductDetails", new { CategoryName = i.Category.Parent.Name, SubcategoryName = i.Category.Name.Replace(" ", "_"), ProductName = i.Name.Replace(" ", "_")})"}>
+            @i.Name </a>*@
+    }
+
+</div>
+
+@*@Html.Action("ViewCategoryManufacturers", "Category")*@
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h2>ViewProducts</h2>
+

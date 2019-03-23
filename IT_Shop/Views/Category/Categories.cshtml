@@ -1,0 +1,28 @@
+﻿@using System.Web.Mvc.Html
+@using IT_Shop.Models; 
+@model List<Category>
+@{
+    ViewBag.Title = "Categories";
+}
+
+@{  
+    @*foreach (var i in Model)
+    {
+        <p>@Html.DisplayFor(m => i.Name)</p>
+        if (i.ParentId != null)
+        {
+            <p>Are parinte pe @i.Parent.Name</p>
+        }
+
+        if (i.SubCategories.Count() > 0)
+        {
+            <p>Are copii pe:</p>
+            foreach (var c in i.SubCategories)
+            {
+                <p>@c.Name</p>
+            }
+        }    
+            }*@}
+@*@Html.Partial("~/Views/Shared/_Menus.cshtml");*@
+    <h2>Categories</h2>
+
