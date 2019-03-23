@@ -33,7 +33,7 @@ namespace IT_Shop.Controllers
                     Id = prodDB.Id,
                     Name = prodDB.Name,
                     CategoryId = prodDB.CategoryId,                
-                    Category    = prodDB.Category
+                    Category = prodDB.Category
                 };
             }
                 return View(prod);
