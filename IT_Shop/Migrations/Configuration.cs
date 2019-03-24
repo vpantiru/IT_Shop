@@ -65,14 +65,13 @@ namespace IT_Shop.Migrations
                 context.SaveChanges();
             }          
             var cat = context.Categories.ToList();
+
             foreach (var i in cat)
             {
                 if (i.ParentId != null)
                 {
-                    Category par = context.Categories.SingleOrDefault(p => p.Id == i.ParentId);
-                    //i.Parent = par;
-                    par.SubCategories.Add(i);
-                    //context.Categories.AddOrUpdate(c => c.Name, i);
+                    Category par = context.Categories.SingleOrDefault(p => p.Id == i.ParentId);                    
+                    par.SubCategories.Add(i);                    
                 }
             }
             context.SaveChanges();
@@ -82,29 +81,24 @@ namespace IT_Shop.Migrations
                 context.Manufacturers.AddOrUpdate(m => m.Name, k);
                 context.SaveChanges();
             }
-            var prod = context.Products.ToList();
-            foreach (var i in prod)
-            {
-                    Manufacturer brand = context.Manufacturers.SingleOrDefault(p => p.Id == i.ManufacturerId);
-                    i.Manufacturer = brand;
-                if (brand != null) brand.Products.Add(i);
-                //context.Categories.AddOrUpdate(c => c.Name, i);                
-            }
-            context.SaveChanges();
 
             foreach (var i in products)
             {
                 context.Products.AddOrUpdate(p => p.Name, i);
-                context.SaveChanges();               
-            }
-            var sub = context.Products.ToList();
-            foreach (var i in sub)
-            {
-                i.Category = context.Categories.SingleOrDefault(p => p.Id == i.CategoryId);
-                //i.Parent = par;                    
-                //context.Categories.AddOrUpdate(c => c.Name, i);
                 context.SaveChanges();
             }
+
+            var prod = context.Products.ToList();
+            foreach (var i in prod)
+            {
+                    Manufacturer brand = context.Manufacturers.SingleOrDefault(p => p.Id == i.ManufacturerId);
+                   
+                if (brand != null) brand.Products.Add(i);
+                //context.Categories.AddOrUpdate(c => c.Name, i);                
+            }
+            context.SaveChanges();
+        
+            var sub = context.Products.ToList();         
             
             context.SaveChanges();
 

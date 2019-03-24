@@ -14,12 +14,18 @@ namespace IT_Shop.Models
             SubCategories = new List<Category>();
             Products = new List<Product>();
         }
+
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         public virtual Category Parent { get; set; }
-        public int? ParentId { get; set; }      
+
+        public int? ParentId { get; set; }    
+        
         public virtual List<Category> SubCategories { get; set; }
+
         public virtual List<Product> Products { get; set; }
 
         public static implicit operator List<object>(Category v)
