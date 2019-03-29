@@ -20,6 +20,12 @@ namespace IT_Shop
             );
 
             routes.MapRoute(
+               name: "CreateProducts",
+               url: "Product/Create/",
+               defaults: new { controller = "Product", action = "Create", }
+           );
+
+            routes.MapRoute(
               name: "Manufacturers",
               url: "Producatori/{action}",
               defaults: new { controller = "Manufacturer", action = "ViewManufacturers" }

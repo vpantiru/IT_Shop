@@ -28,6 +28,8 @@ namespace IT_Shop.Models
 
         public virtual List<Product> Products { get; set; }
 
+        public IEnumerable<ManufactCatLink> ManufactCatLinks{ get; set; }
+
         public static implicit operator List<object>(Category v)
         {
             throw new NotImplementedException();

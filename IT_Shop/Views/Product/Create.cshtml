@@ -1,0 +1,16 @@
+﻿@using IT_Shop.Models
+@model IT_Shop.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<form>
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+
+</form>

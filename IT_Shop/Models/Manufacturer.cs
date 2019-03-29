@@ -15,5 +15,6 @@ namespace IT_Shop.Models
         public string Name { get; set; }
         public bool isSelected { get; set; }
         public List<Product> Products { get; set; }
+        public IEnumerable<ManufactCatLink> ManufactCatLinks { get; set; }
     }
 }

@@ -22,6 +22,12 @@ namespace IT_Shop.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+
         public ActionResult ViewProductDetails(string CategoryName, string SubcategoryName, string ProductName)
         {
             Product prod;
